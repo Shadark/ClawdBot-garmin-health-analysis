@@ -264,6 +264,7 @@ When users ask for insights or want to understand their trends, use `references/
 ## Version Info
 
 - **Created**: 2026-01-25
-- **Author**: Claude (Clawdbot)
-- **Dependencies**: garminconnect (Python library)
+- **Author**: EversonL & Claude
+- **Version**: 1.1.2
+- **Dependencies**: garminconnect, fitparse, gpxpy (Python libraries)
 - **License**: MIT
