@@ -46,19 +46,22 @@ def fetch_sleep(client, days=7, start=None, end=None):
             try:
                 data = client.get_sleep_data(date_str)
                 if data:
-                    sleep_data.append({
-                        "date": date_str,
-                        "sleep_time_seconds": data.get("sleepTimeSeconds"),
-                        "deep_sleep_seconds": data.get("deepSleepSeconds"),
-                        "light_sleep_seconds": data.get("lightSleepSeconds"),
-                        "rem_sleep_seconds": data.get("remSleepSeconds"),
-                        "awake_seconds": data.get("awakeSleepSeconds"),
-                        "sleep_score": data.get("sleepScores", {}).get("overall", {}).get("value"),
-                        "restless_periods": data.get("restlessMoments"),
-                        "avg_hr": data.get("avgSleepHeartRate"),
-                        "avg_hrv": data.get("avgSleepHRV"),
-                        "avg_respiration": data.get("avgSleepRespiration")
-                    })
+                    # Sleep data is nested inside dailySleepDTO
+                    sleep_dto = data.get("dailySleepDTO", {})
+                    if sleep_dto:
+                        sleep_data.append({
+                            "date": date_str,
+                            "sleep_time_seconds": sleep_dto.get("sleepTimeSeconds"),
+                            "deep_sleep_seconds": sleep_dto.get("deepSleepSeconds"),
+                            "light_sleep_seconds": sleep_dto.get("lightSleepSeconds"),
+                            "rem_sleep_seconds": sleep_dto.get("remSleepSeconds"),
+                            "awake_seconds": sleep_dto.get("awakeSleepSeconds"),
+                            "sleep_score": sleep_dto.get("sleepScores", {}).get("overall", {}).get("value"),
+                            "restless_periods": data.get("restlessMomentsCount"),  # This is on root
+                            "avg_hr": sleep_dto.get("averageHeartRate"),
+                            "avg_hrv": data.get("avgOvernightHrv"),  # This is on root
+                            "avg_respiration": sleep_dto.get("averageRespirationValue")
+                        })
             except Exception as e:
                 print(f"⚠️  No sleep data for {date_str}: {e}", file=sys.stderr)
             
@@ -119,12 +122,17 @@ def fetch_body_battery(client, days=7, start=None, end=None):
             date_str = current.strftime("%Y-%m-%d")
             try:
                 data = client.get_body_battery(date_str)
-                if data:
-                    # Get daily summary
-                    charged = data[0].get("charged") if data else None
-                    drained = data[0].get("drained") if data else None
-                    highest = max((d.get("value", 0) for d in data), default=None)
-                    lowest = min((d.get("value", 100) for d in data), default=None)
+                if data and len(data) > 0:
+                    day_data = data[0]
+                    charged = day_data.get("charged")
+                    drained = day_data.get("drained")
+                    
+                    # Parse bodyBatteryValuesArray to get highest/lowest
+                    values_array = day_data.get("bodyBatteryValuesArray", [])
+                    values = [v[1] for v in values_array if len(v) > 1]  # Extract values from [timestamp, value] pairs
+                    
+                    highest = max(values) if values else None
+                    lowest = min(values) if values else None
                     
                     bb_data.append({
                         "date": date_str,
