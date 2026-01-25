@@ -1,5 +1,41 @@
 # Changelog
 
+## v1.1.0 (2026-01-25)
+
+### 🚀 Major Features
+
+**Time-Based Queries**
+- New `garmin_query.py` script for time-based questions
+- Ask "what was my heart rate at 3pm?" and get instant answers
+- Supports heart rate, stress, Body Battery, steps
+- Flexible time parsing (12/24 hour formats)
+
+**Extended Metrics** (`garmin_data_extended.py`)
+- Training readiness & training status
+- Body composition (weight, body fat %, muscle mass, BMI)
+- Weight tracking over time
+- SPO2 (blood oxygen saturation)
+- Detailed respiration data
+- Intraday steps, floors climbed
+- Intensity minutes (vigorous/moderate activity)
+- Hydration tracking
+- Time-series stress data
+- Max metrics (VO2 max, fitness age, endurance/hill scores)
+- Intraday heart rate (all samples)
+
+**Activity File Analysis** (`garmin_activity_files.py`)
+- Download FIT/GPX/TCX files from activities
+- Parse FIT files for GPS, elevation, HR, cadence, power
+- Parse GPX files for route visualization
+- Query data at specific distances ("what was my elevation at mile 2?")
+- Query data at specific times during activities
+- Comprehensive activity analysis & statistics
+- Support for advanced use cases (route mapping, pace analysis, elevation profiles)
+
+**Documentation**
+- New `references/extended_capabilities.md` with comprehensive usage examples
+- Updated dependencies (fitparse, gpxpy)
+
 ## v1.0.1 (2026-01-25)
 
 ### Bug Fixes
