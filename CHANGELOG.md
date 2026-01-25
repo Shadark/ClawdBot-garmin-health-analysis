@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.5 (2026-01-25)
+
+### Metadata
+- Expanded ClawdHub description with conversational examples and "talk to your data" messaging
+- Showcases real use cases: "what was my fastest speed?", activity analysis, recovery tracking
+
 ## v1.1.3 (2026-01-25)
 
 ### Documentation
