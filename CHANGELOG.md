@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.1 (2026-01-25)
+
+### Bug Fixes
+- Fixed sleep data extraction - properly parse nested `dailySleepDTO` object from Garmin API
+- Sleep time and scores now display correctly in all charts and dashboards
+
 ## v1.0.0 (2026-01-25)
 
 ### Initial Release
