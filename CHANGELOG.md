@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.2 (2026-01-25)
+
+### Metadata
+- Updated description to highlight v1.1+ features (time queries, 20+ metrics, FIT/GPX analysis)
+- Changed author to "EversonL & Claude"
+
 ## v1.1.1 (2026-01-25)
 
 ### Documentation
