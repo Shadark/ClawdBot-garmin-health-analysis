@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1 (2026-01-25)
+
+### Documentation
+- Updated metadata with new dependencies (fitparse, gpxpy)
+
 ## v1.1.0 (2026-01-25)
 
 ### 🚀 Major Features
