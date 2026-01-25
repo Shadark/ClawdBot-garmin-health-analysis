@@ -1,7 +1,7 @@
 ---
 name: garmin-health-analysis
 description: Comprehensive Garmin health tracking with time-based queries ("what was my HR at 3pm?"), 20+ metrics (sleep, Body Battery, HRV, training readiness, body composition, SPO2), FIT/GPX file analysis, and interactive charts. Perfect for recovery tracking, performance analysis, and health insights.
-version: 1.1.2
+version: 1.1.3
 author: EversonL & Claude
 homepage: https://github.com/eversonl/ClawdBot-garmin-health-analysis
 metadata: {"clawdbot":{"emoji":"⌚","requires":{"env":["GARMIN_EMAIL","GARMIN_PASSWORD"]},"install":[{"id":"garminconnect","kind":"python","package":"garminconnect","label":"Install garminconnect (pip)"},{"id":"fitparse","kind":"python","package":"fitparse","label":"Install fitparse (pip)"},{"id":"gpxpy","kind":"python","package":"gpxpy","label":"Install gpxpy (pip)"}]}}
@@ -265,6 +265,6 @@ When users ask for insights or want to understand their trends, use `references/
 
 - **Created**: 2026-01-25
 - **Author**: EversonL & Claude
-- **Version**: 1.1.2
+- **Version**: 1.1.3
 - **Dependencies**: garminconnect, fitparse, gpxpy (Python libraries)
 - **License**: MIT

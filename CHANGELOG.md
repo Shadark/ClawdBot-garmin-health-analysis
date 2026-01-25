@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3 (2026-01-25)
+
+### Documentation
+- Updated Version Info section in SKILL.md with correct author and all dependencies
+
 ## v1.1.2 (2026-01-25)
 
 ### Metadata
