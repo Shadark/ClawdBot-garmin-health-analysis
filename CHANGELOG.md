@@ -1,5 +1,30 @@
 # Changelog
 
+## v1.2.1 (2026-01-26)
+
+### 🧹 Repository Cleanup & Focus
+
+**Removed old MCP server files** - Now using dedicated MCP server repo for Claude Desktop users:
+- Removed `CLAUDE_DESKTOP.md` (old MCP setup docs)
+- Removed `mcp_server.py` (old Python MCP server - 750+ lines)
+- Removed `requirements.txt` (old MCP dependencies)
+
+**Updated documentation for clarity:**
+- README.md now clearly identifies this as the Clawdbot skill
+- Added prominent callout directing Claude Desktop users to the dedicated MCP server repo
+- Simplified `references/mcp_setup.md` to redirect to https://github.com/eversonl/garmin-health-mcp-server
+- Updated file tree to reflect current structure
+
+**New dedicated MCP server** for Claude Desktop users:
+- Purpose-built Node.js MCP server at https://github.com/eversonl/garmin-health-mcp-server
+- Uses modern @modelcontextprotocol/sdk
+- Easy `npm install` + `npm run auth` setup
+- Comprehensive installation guide and troubleshooting
+
+**Both can coexist** - Shared authentication allows users to install both the Clawdbot skill and MCP server simultaneously.
+
+**This repo is now focused exclusively on the Clawdbot skill** for automated health monitoring, scheduled reports, and proactive check-ins.
+
 ## v1.2.0 (2026-01-26)
 
 ### 🚀 Major Feature: MCP Server for Claude Desktop & Code
