@@ -11,7 +11,18 @@ metadata: {"clawdbot":{"emoji":"⌚","requires":{"env":["GARMIN_EMAIL","GARMIN_P
 
 Query health metrics from Garmin Connect and generate interactive HTML charts.
 
-## Setup (first time only)
+## Two Installation Paths
+
+This skill supports **two different setups**:
+
+1. **Clawdbot Skill** (this guide) - Use with Clawdbot for automation and proactive health monitoring
+2. **MCP Server** ([see MCP setup guide](references/mcp_setup.md)) - Use with standard Claude Desktop as an MCP server
+
+Choose the path that matches your use case. You can also use both simultaneously!
+
+---
+
+## Clawdbot Skill Setup (first time only)
 
 ### 1. Install Dependencies
 
