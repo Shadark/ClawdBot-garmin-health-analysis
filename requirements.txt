@@ -1,4 +1,0 @@
-garminconnect
-fitparse
-gpxpy
-mcp>=0.2.0

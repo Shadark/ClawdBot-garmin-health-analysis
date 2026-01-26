@@ -1,16 +1,20 @@
-# Garmin Health Analysis
+# Garmin Health Analysis - Clawdbot Skill
 
 > **Talk to your Garmin data naturally** - "what was my fastest speed snowboarding?", "how did I sleep last night?", "what was my heart rate at 3pm?"
 
 Access 20+ metrics from your Garmin device: sleep stages, Body Battery, HRV, VO2 max, training readiness, body composition, SPO2, and more. Download FIT/GPX files, query elevation/pace at any point, and generate interactive health dashboards.
 
-## 🚀 Quick Start
+## 🔵 Looking for Claude Desktop? 
 
-### Choose Your Path
+**This is the Clawdbot skill repo.** For standard Claude Desktop, use the dedicated MCP server:
 
-#### Option 1: Clawdbot Skill (Automation & Proactive Monitoring)
+👉 **[garmin-health-mcp-server](https://github.com/eversonl/garmin-health-mcp-server)** - Node.js MCP server for Claude Desktop
 
-**Best for**: Scheduled health check-ins, automated reporting, integration with other Clawdbot skills
+---
+
+## 🚀 Clawdbot Installation
+
+**Best for**: Automated health monitoring, scheduled reports, proactive check-ins
 
 ```bash
 # Install via clawdhub
@@ -27,26 +31,7 @@ pip3 install garminconnect fitparse gpxpy
 python3 scripts/garmin_auth.py login
 ```
 
-**[📖 Full Clawdbot Setup Guide](SKILL.md)**
-
-#### Option 2: MCP Server (Standard Claude Desktop)
-
-**Best for**: Ad-hoc queries in Claude Desktop, no Clawdbot required
-
-```bash
-# Clone the MCP server repo
-git clone https://github.com/eversonl/garmin-health-mcp-server.git
-cd garmin-health-mcp-server
-
-# Install dependencies
-npm install
-pip3 install garminconnect fitparse gpxpy
-
-# Configure Claude Desktop
-# Add to claude_desktop_config.json (see guide)
-```
-
-**[📖 Full MCP Server Setup Guide](references/mcp_setup.md)**
+**[📖 Full Setup Guide](SKILL.md)**
 
 ## ⚡ Features
 
@@ -89,18 +74,21 @@ pip3 install garminconnect fitparse gpxpy
 
 ```
 garmin-health-analysis/
-├── SKILL.md                    # Clawdbot setup & usage
-├── README.md                   # This file
+├── SKILL.md                       # Clawdbot setup & usage
+├── README.md                      # This file
+├── install.sh                     # Automated installation script
 ├── scripts/
-│   ├── garmin_auth.py         # Authentication helper
-│   ├── garmin_data.py         # Fetch JSON data
-│   └── garmin_chart.py        # Generate HTML charts
+│   ├── garmin_auth.py            # Authentication helper
+│   ├── garmin_data.py            # Fetch health metrics (JSON)
+│   ├── garmin_chart.py           # Generate HTML charts
+│   ├── garmin_data_extended.py   # Extended metrics (VO2, readiness, etc.)
+│   ├── garmin_activity_files.py  # Download FIT/GPX files
+│   └── garmin_query.py           # Time-based queries
 ├── references/
-│   ├── api.md                 # Garmin Connect API docs
-│   ├── health_analysis.md     # Metric interpretation guide
-│   ├── extended_capabilities.md  # Advanced features
-│   └── mcp_setup.md           # MCP server installation
-└── config.example.json        # Credentials template
+│   ├── health_analysis.md        # Metric interpretation guide
+│   ├── api.md                    # Garmin Connect API docs
+│   └── extended_capabilities.md  # Advanced features
+└── config.example.json           # Credentials template
 ```
 
 ## 🔒 Privacy & Security
@@ -111,21 +99,15 @@ garmin-health-analysis/
 - No cloud storage or external data sharing
 - Open source - audit the code yourself
 
-## 🤝 Can I Use Both?
-
-**Yes!** You can run both the Clawdbot skill and the MCP server simultaneously. They share authentication tokens, so you only need to log in once.
-
-**Use cases:**
-- **Clawdbot**: Morning health summaries, workout notifications, weekly reports
-- **Claude Desktop**: Quick ad-hoc queries during the day
-
 ## 📚 Documentation
 
 - **[SKILL.md](SKILL.md)** - Complete Clawdbot setup, commands, troubleshooting
-- **[references/mcp_setup.md](references/mcp_setup.md)** - MCP server for Claude Desktop
 - **[references/health_analysis.md](references/health_analysis.md)** - Science-backed metric interpretation
 - **[references/api.md](references/api.md)** - Garmin Connect API details
 - **[references/extended_capabilities.md](references/extended_capabilities.md)** - Advanced features
+
+### Looking for Claude Desktop?
+See **[garmin-health-mcp-server](https://github.com/eversonl/garmin-health-mcp-server)** for the dedicated MCP server (you can use both!)
 
 ## 🐛 Troubleshooting
 
