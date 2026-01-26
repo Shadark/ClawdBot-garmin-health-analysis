@@ -1,17 +1,49 @@
 # Garmin Health Analysis
 
-A comprehensive Clawdbot skill for accessing, analyzing, and visualizing Garmin Connect health data.
+Talk to your Garmin data naturally with Claude - works with **Clawdbot**, **Claude Desktop**, **Claude Code**, and any MCP client.
 
 ## Features
 
+- 🤖 **Works everywhere**: Clawdbot, Claude Desktop, Claude Code, any MCP client
 - 📊 **Comprehensive health metrics**: Sleep, Body Battery, HRV, heart rate, activities, stress, and 15+ more
 - 🎯 **Time-based queries**: "What was my heart rate at 3pm?" - instant answers
 - 🗺️ **Activity file analysis**: Download and parse FIT/GPX files with GPS, elevation, pace, power data
-- 📈 **Interactive charts**: Beautiful HTML dashboards with Chart.js
+- 📈 **Interactive charts**: Beautiful HTML dashboards with Chart.js (Clawdbot)
 - 🧠 **Health analysis**: Science-backed interpretation of your data
 - 💾 **Local authentication**: Secure token storage, no cloud dependencies
 
 ## Quick Start
+
+### For Claude Desktop / Claude Code
+
+See **[CLAUDE_DESKTOP.md](CLAUDE_DESKTOP.md)** for MCP server installation.
+
+**TL;DR:**
+```bash
+pip install mcp garminconnect fitparse gpxpy
+```
+
+Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+```json
+{
+  "mcpServers": {
+    "garmin": {
+      "command": "python",
+      "args": ["/path/to/garmin-health-analysis/mcp_server.py"],
+      "env": {
+        "GARMIN_EMAIL": "your@email.com",
+        "GARMIN_PASSWORD": "yourpass"
+      }
+    }
+  }
+}
+```
+
+Then ask Claude: "How did I sleep last night?" or "What was my fastest speed snowboarding?"
+
+---
+
+### For Clawdbot
 
 ### 1. Install Dependencies
 

@@ -1,3 +1,4 @@
 garminconnect
 fitparse
-gpxpy>=0.2.0
+gpxpy
+mcp>=0.2.0

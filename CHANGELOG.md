@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.2.0 (2026-01-26)
+
+### 🚀 Major Feature: MCP Server for Claude Desktop & Code
+
+**NEW: Works with Claude Desktop, Claude Code, and any MCP client!**
+
+- Added `mcp_server.py` - full MCP (Model Context Protocol) server implementation
+- Exposes all Garmin tools to Claude Desktop, Claude Code, and other MCP-compatible clients
+- New installation guide: `CLAUDE_DESKTOP.md` with step-by-step setup
+- 14 MCP tools available:
+  - Health metrics (sleep, Body Battery, HRV, activities, heart rate)
+  - Time-based queries (HR/stress/BB at specific times)
+  - Extended metrics (training readiness, body composition, SPO2)
+  - Activity file downloads and analysis
+- Updated README with Claude Desktop quick start
+- Added `mcp` to requirements.txt
+
+**Now you can use this skill with:**
+- ✅ Clawdbot (original)
+- ✅ Claude Desktop (new!)
+- ✅ Claude Code / VS Code extension (new!)
+- ✅ Any MCP-compatible client (new!)
+
 ## v1.1.5 (2026-01-25)
 
 ### Metadata
