@@ -140,4 +140,12 @@ See **[garmin-health-mcp-server](https://github.com/eversonl/garmin-health-mcp-s
 
 ---
 
+## 💖 Support This Project
+
+If you find this skill useful, consider supporting its development:
+
+<a href="https://buymeacoffee.com/leeev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+---
+
 **Questions?** Open an issue on GitHub or ask in the Clawdbot Discord!
