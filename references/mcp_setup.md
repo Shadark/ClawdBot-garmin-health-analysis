@@ -1,6 +1,6 @@
 # MCP Server for Standard Claude Desktop
 
-> **This is a Clawdbot skill.** If you want to use Garmin data with standard Claude Desktop, use the dedicated MCP server instead.
+> **This is an OpenClaw skill.** If you want to use Garmin data with standard Claude Desktop, use the dedicated MCP server instead.
 
 ## 📦 Dedicated MCP Server Repository
 
@@ -39,24 +39,24 @@ npm run auth
 
 ---
 
-## This Skill (Clawdbot)
+## This Skill (OpenClaw)
 
-If you're using **Clawdbot**, you're in the right place! This skill provides:
+If you're using **OpenClaw**, you're in the right place! This skill provides:
 - Automated health monitoring
-- Scheduled reports and summaries  
+- Scheduled reports and summaries
 - Proactive workout notifications
-- Integration with other Clawdbot skills
+- Integration with other OpenClaw skills
 
-**[📖 Clawdbot Skill Setup →](../SKILL.md)**
+**[📖 OpenClaw Skill Setup →](../SKILL.md)**
 
 ---
 
 ## Using Both?
 
-You can use both the Clawdbot skill and the MCP server simultaneously! They share authentication tokens, so you only need to log in once.
+You can use both the OpenClaw skill and the MCP server simultaneously! They share authentication tokens, so you only need to log in once.
 
 **Recommended setup:**
-- **Clawdbot**: Morning health summaries, weekly reports, automated tracking
+- **OpenClaw**: Morning health summaries, weekly reports, automated tracking
 - **Claude Desktop**: Quick ad-hoc queries during the day
 
-Authentication tokens are shared at `~/.clawdbot/garmin-tokens.json` (or `~/.garmin-tokens.json`).
+Authentication tokens are stored locally in `~/.openclaw/garmin/` (legacy: `~/.clawdbot/garmin/`).
